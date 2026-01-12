@@ -49,7 +49,7 @@ export function HeroSection() {
 
           {/* Tagline */}
           <p className="text-base md:text-lg text-white/70 mb-12 max-w-2xl mx-auto">
-            Berpengalaman lebih dari 3 generasi dalam memproduksi kapal berkualitas. 
+            Berpengalaman dalam memproduksi kapal berkualitas. 
             Kami menjamin ketahanan konstruksi, presisi pengerjaan, dan penggunaan material kayu terbaik untuk kebutuhan operasional laut Anda.
           </p>
 
