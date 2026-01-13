@@ -5,9 +5,15 @@ export function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = () => {
-    // Replace YOUR_WHATSAPP_NUMBER with actual number (format: country code + number without + or -)
-    // Example: 6281234567890 for +62 812-3456-7890
-    window.open('https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hello!%20I%27m%20interested%20in%20learning%20more%20about%20your%20wooden%20vessels.', '_blank');
+    const phoneNumber = "6282279089179"; // Nomor tujuan
+    
+    // Pesan Template Profesional
+    const message = "Halo, saya tertarik dengan produk Anda. Bisakah saya mendapatkan informasi lebih lanjut?";
+    
+    // Membuat URL WhatsApp secara otomatis
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(url, '_blank');
   };
 
   return (
@@ -19,7 +25,7 @@ export function WhatsAppButton() {
         }`}
       >
         <p className="text-sm text-[var(--ocean-deep)]" style={{ fontWeight: 600 }}>
-          Chat with us on WhatsApp
+          Hubungi kami via WhatsApp
         </p>
         {/* Arrow pointing down */}
         <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-r-2 border-b-2 border-[var(--brass-accent)] transform rotate-45"></div>

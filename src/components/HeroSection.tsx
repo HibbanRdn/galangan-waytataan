@@ -1,6 +1,20 @@
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Anchor, Waves, Ship } from "lucide-react";
 
 export function HeroSection() {
+  
+  // Fungsi handler untuk klik tombol WhatsApp
+  const handleConsultation = () => {
+    const phoneNumber = "6282175152957"; // Nomor tujuan (format 62)
+    
+    // Pesan Template Khusus Konsultasi
+    const message = "Halo Way Tataan, saya ingin berkonsultasi mengenai pembuatan kapal kayu. Mohon informasi lebih lanjut.";
+    
+    // Membuat URL WhatsApp
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(url, '_blank');
+  };
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Hero Image with Overlay */}
@@ -30,17 +44,24 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative h-full flex items-center justify-center px-6 md:px-12">
         <div className="max-w-5xl text-center">
-          {/* Location Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full">
-            <div className="w-2 h-2 bg-[var(--brass-accent)] rounded-full animate-pulse"></div>
-            <span className="text-white/90 text-sm tracking-wide">Way Tataan, Lampung</span>
+          
+          {/* Maritime Icons Badge */}
+          <div className="inline-flex items-center justify-center gap-4 px-6 py-3 mb-8 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full group hover:bg-white/15 transition-colors duration-300">
+            {/* Ikon 1: Jangkar (Aksen Kuningan) */}
+            <Anchor className="w-5 h-5 text-[var(--brass-accent)]" />
+            
+            {/* Ikon 2: Kapal (Putih Utama) */}
+            <Ship className="w-6 h-6 text-white/90" />
+            
+            {/* Ikon 3: Ombak (Aksen Halus) */}
+            <Waves className="w-5 h-5 text-white/50 group-hover:text-white/80 transition-colors" />
           </div>
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl tracking-tight mb-6 text-white" style={{ fontWeight: 700, lineHeight: 1.1 }}>
-            Way Tataan,
+            Galangan Kapal Kayu,
             <br />
-            <span className="text-[var(--brass-accent)]">Galangan Kapal Kayu</span>
+            <span className="text-[var(--brass-accent)]">Way Tataan</span>
           </h1>
           
           <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-12 max-w-3xl mx-auto" style={{ fontWeight: 500 }}>
@@ -55,7 +76,7 @@ export function HeroSection() {
 
           {/* CTA Button with Wood & Brass Styling */}
           <button 
-            onClick={() => window.open('https://wa.me/YOUR_WHATSAPP_NUMBER', '_blank')}
+            onClick={handleConsultation} // Menggunakan handler baru
             className="group relative inline-flex items-center gap-3 px-8 py-4 overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             style={{
               background: 'linear-gradient(135deg, var(--teak-wood) 0%, var(--teak-light) 100%)',
@@ -81,7 +102,7 @@ export function HeroSection() {
             <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
               <div className="w-1.5 h-2 bg-white/50 rounded-full"></div>
             </div>
-            <span className="text-white/50 text-xs tracking-widest">GULIR</span>
+            <span className="text-white/50 text-xs tracking-widest">SCROLL</span>
           </div>
         </div>
       </div>

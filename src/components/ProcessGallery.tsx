@@ -42,7 +42,7 @@ const processImages: GalleryImage[] = [
 
 export function ProcessGallery() {
   return (
-    <section className="relative py-24 md:py-32 px-6 md:px-12 overflow-hidden bg-gradient-to-b from-[var(--ocean-deep)] to-[var(--ocean-indigo)]">
+    <section id="process" className="relative py-24 md:py-32 px-6 md:px-12 overflow-hidden bg-gradient-to-b from-[var(--ocean-deep)] to-[var(--ocean-indigo)]">
       {/* Subtle rope pattern background */}
       <div 
         className="absolute inset-0 opacity-5"

@@ -66,7 +66,7 @@ const boats: BoatSpec[] = [
 
 export function ProductCatalog() {
   return (
-    <section className="py-24 md:py-32 px-6 md:px-12 bg-[var(--seafoam-white)]">
+    <section id="fleet" className="py-24 md:py-32 px-6 md:px-12 bg-[var(--seafoam-white)]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">

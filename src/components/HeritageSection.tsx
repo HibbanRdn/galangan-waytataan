@@ -2,7 +2,7 @@ import { Compass, Waves, Anchor } from "lucide-react";
 
 export function HeritageSection() {
   return (
-    <section className="relative py-24 md:py-32 px-6 md:px-12 overflow-hidden">
+    <section id="heritage" className="relative py-24 md:py-32 px-6 md:px-12 overflow-hidden">
       {/* Background with wood texture overlay */}
       <div className="absolute inset-0 bg-[var(--ocean-indigo)]">
         {/* Subtle nautical blueprint pattern */}
@@ -31,7 +31,7 @@ export function HeritageSection() {
             <span className="text-[var(--brass-accent)] text-sm tracking-wide uppercase">Warisan Kami</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4" style={{ fontWeight: 700 }}>
-            Desain Lambung Khas
+            Desain Lambung Kapal Khas
           </h2>
           <div className="w-24 h-1 bg-[var(--brass-accent)] mx-auto"></div>
         </div>
