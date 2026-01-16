@@ -1,6 +1,7 @@
 import { Ruler, Anchor, TreePine, Users, FileText } from "lucide-react";
 
-interface BoatSpec {
+// 1. Tambahkan "export" agar interface ini bisa di-import di App.tsx
+export interface BoatSpec {
   name: string;
   type: string;
   image: string;
@@ -11,6 +12,11 @@ interface BoatSpec {
     wood: string;
     crew: string;
   };
+}
+
+// 2. Definisikan tipe Props untuk komponen ini
+interface CatalogProps {
+  onSelectBoat: (boat: BoatSpec) => void;
 }
 
 const boats: BoatSpec[] = [
@@ -64,7 +70,8 @@ const boats: BoatSpec[] = [
   }
 ];
 
-export function ProductCatalog() {
+// 3. Terima props 'onSelectBoat' di parameter fungsi
+export function ProductCatalog({ onSelectBoat }: CatalogProps) {
   return (
     <section id="fleet" className="py-24 md:py-32 px-6 md:px-12 bg-[var(--seafoam-white)]">
       <div className="max-w-7xl mx-auto">
@@ -170,6 +177,7 @@ export function ProductCatalog() {
 
                 {/* Action Button */}
                 <button 
+                  onClick={() => onSelectBoat(boat)} 
                   className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[var(--ocean-indigo)] text-white rounded-lg hover:bg-[var(--ocean-deep)] transition-colors duration-300 border-2 border-transparent hover:border-[var(--brass-accent)]"
                   style={{ fontWeight: 600 }}
                 >
