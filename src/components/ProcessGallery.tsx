@@ -24,17 +24,17 @@ const processImages: GalleryImage[] = [
     description: "Konstruksi sambungan pasak yang kokoh dan rapi"
   },
   {
-    url: "https://images.unsplash.com/photo-1586064957227-11d763b135a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib2F0JTIwYnVpbGRpbmclMjB3b3Jrc2hvcHxlbnwxfHx8fDE3NjgyMDg3MjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    url: "https://a.okezone.com/photos/2022/08/23/84902/403809_medium.jpg",
     title: "Perakitan Lambung",
     description: "Pembangunan kerangka dan dinding kapal"
   },
   {
-    url: "https://images.unsplash.com/photo-1722411927625-0e478acf502b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmFmdHNtYW4lMjB3b29kd29ya2luZyUyMHRyYWRpdGlvbmFsfGVufDF8fHx8MTc2ODIwOTQ1Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    url: "https://plus.unsplash.com/premium_photo-1663040160933-98274ebfedb6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Pengerjaan Detail",
     description: "Diselesaikan oleh tenaga ahli berpengalaman"
   },
   {
-    url: "https://images.unsplash.com/photo-1683612881120-d8b7321aaa2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib2F0JTIwbGF1bmNoJTIwd2F0ZXJ8ZW58MXx8fHwxNzY4MjAxMDU1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    url: "https://img.antarafoto.com/cache/1200x710/2010/10/25/pelepasan-kapal-2mnb-dom.webp",
     title: "Peluncuran",
     description: "Kapal siap diserahkan dan berlayar"
   }

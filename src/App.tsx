@@ -43,6 +43,8 @@ export default function App() {
       <HeroSection />
       
       <HeritageSection />
+
+      
       
       {/* PENTING: Kita kirim fungsi 'setSelectedBoat' ke dalam Catalog 
         agar tombol di sana bisa mengubah state di sini.
@@ -50,7 +52,7 @@ export default function App() {
       <ProductCatalog onSelectBoat={(boat: Boat) => setSelectedBoat(boat)} />
       
       <ProcessGallery />
-      
+
       <Footer />
       
       <WhatsAppButton />

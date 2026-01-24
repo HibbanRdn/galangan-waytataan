@@ -61,11 +61,11 @@ export function ProductDetail({ boat, onBack }: ProductDetailProps) {
 
   // Extended boat data (Tidak ada perubahan)
   const extendedData = {
-    priceRange: "Rp 850jt - 1.5M (Estimasi)",
+    priceRange: "Rp 180 - 250jt (Estimasi)",
     images: [
       boat.image,
-      "https://images.unsplash.com/photo-1544551763-46a8733bcc41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-      "https://images.unsplash.com/photo-1621847468516-1ed5d0df56fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "https://images.unsplash.com/photo-1769253916668-376c8ee7c04c?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1769253916668-376c8ee7c04c?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
     technical: {
       dimensions: {
@@ -377,7 +377,7 @@ export default function App() {
   const sampleBoat: BoatSpec = {
     name: "Pinisi Nusantara 18M",
     type: "Kapal Phinisi Tradisional",
-    image: "https://images.unsplash.com/photo-1544551763-46a8733bcc41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1769253916668-376c8ee7c04c?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Kapal Phinisi 18 meter yang menggabungkan keindahan desain tradisional Bugis-Makassar dengan teknologi konstruksi modern.",
     specs: {
       length: "18.00 Meter",

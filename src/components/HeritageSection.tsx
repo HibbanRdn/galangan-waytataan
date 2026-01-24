@@ -28,10 +28,10 @@ export function HeritageSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 bg-[var(--brass-accent)]/20 backdrop-blur-sm border border-[var(--brass-accent)]/30 rounded-full">
             <Waves className="w-4 h-4 text-[var(--brass-accent)]" />
-            <span className="text-[var(--brass-accent)] text-sm tracking-wide uppercase">Warisan Kami</span>
+            <span className="text-[var(--brass-accent)] text-sm tracking-wide uppercase">Warisan & Dedikasi</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4" style={{ fontWeight: 700 }}>
-            Desain Lambung Kapal Khas
+            Keahlian Tangan Pertama
           </h2>
           <div className="w-24 h-1 bg-[var(--brass-accent)] mx-auto"></div>
         </div>
@@ -42,7 +42,7 @@ export function HeritageSection() {
           <div className="relative group">
             <div className="relative overflow-hidden rounded-lg border-4 border-[var(--brass-accent)]/30 shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1722411927625-0e478acf502b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmFmdHNtYW4lMjB3b29kd29ya2luZyUyMHRyYWRpdGlvbmFsfGVufDF8fHx8MTc2ODIwOTQ1Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="https://images.unsplash.com/photo-1769253916683-04f6d391d77e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Pengrajin senior bekerja dengan kayu"
                 className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -68,12 +68,13 @@ export function HeritageSection() {
               </div>
               <div>
                 <h3 className="text-2xl text-white mb-3" style={{ fontWeight: 600 }}>
-                  Tiga Generasi Keahlian
+                  Perintisan Pak Zainudin
                 </h3>
                 <p className="text-white/80 leading-relaxed">
-                  Sejak 1947, keluarga kami telah menciptakan kapal yang melayani para nelayan, 
-                  pedagang, dan penjelajah di pesisir Lampung. Setiap kapal membawa 
-                  kearifan leluhur dan inovasi teknik maritim modern.
+                  Dimulai dari perintisan usaha pada tahun <strong>1999</strong> dan diresmikan pada <strong>2002</strong>, 
+                  galangan ini dibangun di atas pondasi kerja keras <strong>Bapak Zainudin</strong>. 
+                  Hingga hari ini, beliau masih turun tangan langsung mengelola operasional, 
+                  memastikan visi dan kualitas yang sama seperti saat pertama kali didirikan.
                 </p>
               </div>
             </div>
@@ -84,13 +85,12 @@ export function HeritageSection() {
               </div>
               <div>
                 <h3 className="text-2xl text-white mb-3" style={{ fontWeight: 600 }}>
-                  Lambung "Way Tataan"
+                  Standar "Mustika Asih"
                 </h3>
                 <p className="text-white/80 leading-relaxed">
-                  Desain lambung andalan kami, yang disempurnakan selama puluhan tahun, memberikan stabilitas 
-                  luar biasa di arus Selat Sunda yang tak terduga. Kelengkungan lunas yang unik 
-                  mengurangi hambatan sambil menjaga integritas struktur, memungkinkan kecepatan 
-                  dan keamanan dalam kondisi menantang.
+                  Pengalaman lebih dari dua dekade Pak Zainudin menghasilkan desain lambung yang presisi. 
+                  Konstruksi kami dirancang untuk stabilitas maksimal di perairan, menggabungkan 
+                  teknik tradisional yang teruji waktu dengan kebutuhan pelayaran modern.
                 </p>
               </div>
             </div>
@@ -98,16 +98,16 @@ export function HeritageSection() {
             <div className="pt-6 border-t border-white/10">
               <div className="grid grid-cols-3 gap-6 text-center">
                 <div>
-                  <div className="text-3xl text-[var(--brass-accent)] mb-1" style={{ fontWeight: 700 }}>75+</div>
+                  <div className="text-3xl text-[var(--brass-accent)] mb-1" style={{ fontWeight: 700 }}>25+</div>
                   <div className="text-white/60 text-sm">Tahun Berkarya</div>
                 </div>
                 <div>
-                  <div className="text-3xl text-[var(--brass-accent)] mb-1" style={{ fontWeight: 700 }}>500+</div>
+                  <div className="text-3xl text-[var(--brass-accent)] mb-1" style={{ fontWeight: 700 }}>250+</div>
                   <div className="text-white/60 text-sm">Kapal Dibuat</div>
                 </div>
                 <div>
                   <div className="text-3xl text-[var(--brass-accent)] mb-1" style={{ fontWeight: 700 }}>100%</div>
-                  <div className="text-white/60 text-sm">Buatan Tangan</div>
+                  <div className="text-white/60 text-sm">Supervisi Owner</div>
                 </div>
               </div>
             </div>

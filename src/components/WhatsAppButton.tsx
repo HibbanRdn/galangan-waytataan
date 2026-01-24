@@ -5,12 +5,13 @@ export function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = () => {
-    const phoneNumber = "6282279089179"; // Nomor tujuan
+    // Nomor yang sudah dikonfirmasi
+    const phoneNumber = "6281369013310"; 
     
-    // Pesan Template Profesional
-    const message = "Halo, saya tertarik dengan produk Anda. Bisakah saya mendapatkan informasi lebih lanjut?";
+    // Pesan Template dengan Brand Mustika Asih
+    const message = "Halo Mustika Asih, saya tertarik dengan layanan pembuatan kapal Anda. Bisakah saya mendapatkan informasi lebih lanjut?";
     
-    // Membuat URL WhatsApp secara otomatis
+    // Membuat URL WhatsApp
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
     window.open(url, '_blank');

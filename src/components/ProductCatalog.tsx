@@ -1,6 +1,6 @@
 import { Ruler, Anchor, TreePine, Users, FileText } from "lucide-react";
 
-// 1. Tambahkan "export" agar interface ini bisa di-import di App.tsx
+// Interface tetap sama seperti aslinya
 export interface BoatSpec {
   name: string;
   type: string;
@@ -14,63 +14,64 @@ export interface BoatSpec {
   };
 }
 
-// 2. Definisikan tipe Props untuk komponen ini
+// Props tetap sama
 interface CatalogProps {
   onSelectBoat: (boat: BoatSpec) => void;
 }
 
+// Data diperbarui: 5 Varian Alat Tangkap
+// Info Lebar digabung ke dalam 'length' agar tidak merubah struktur data
 const boats: BoatSpec[] = [
   {
-    name: "Jukung Tradisional",
-    type: "Perahu Bercadik",
-    image: "https://images.unsplash.com/photo-1729335854526-96955515cae8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGZpc2hpbmclMjBib2F0fGVufDF8fHx8MTc2ODIwMTAxOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    description: "Kapal nelayan lincah untuk perairan pesisir. Dilengkapi dengan sistem penyeimbang cadik tradisional.",
+    name: "Kapal Jaring Insang",
+    type: "Gill Net Specialist",
+    image: "https://images.unsplash.com/photo-1769253916683-04f6d391d77e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Dirancang khusus untuk operasional Gill Net. Ikan (tuna kecil, tongkol, kakap) ditangkap dengan cara terjerat pada insangnya.",
     specs: {
-      length: "6-8 meter",
-      capacity: "500 kg",
+      length: "7.5-10m x 3-5m", // Format: Panjang x Lebar
+      capacity: "2 - 3 Ton",
+      wood: "Ulin & Jati",
+      crew: "3-4 orang"
+    }
+  },
+  {
+    name: "Kapal Jaring Tarik",
+    type: "Pukat Cincin / Pantai",
+    image: "https://images.unsplash.com/photo-1769253917152-524b38a9b448?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Memiliki dek luas untuk menarik jaring (Pukat Pantai/Cincin Kecil) baik secara manual maupun menggunakan mesin gardan.",
+    specs: {
+      length: "7.5-10m x 3-5m",
+      capacity: "3 - 4 Ton",
+      wood: "Ulin & Meranti",
+      crew: "4-6 orang"
+    }
+  },
+  {
+    name: "Kapal Bagan",
+    type: "Jaring Angkat (Lift Net)",
+    image: "https://images.unsplash.com/photo-1769253917152-524b38a9b448?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Dilengkapi struktur untuk lampu penarik perhatian ikan (teri, cumi). Jaring dioperasikan dengan diangkat dari bawah kapal.",
+    specs: {
+      length: "7.5-10m x 3-5m",
+      capacity: "1.5 - 2 Ton",
       wood: "Jati & Mahoni",
       crew: "2-3 orang"
     }
   },
   {
-    name: "Kapal Motor",
-    type: "Kapal Nelayan Bermotor",
-    image: "https://images.unsplash.com/photo-1504979128236-23f86972356c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBib2F0JTIwY29uc3RydWN0aW9ufGVufDF8fHx8MTc2ODIwODcyMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    description: "Kapal motor tangguh untuk laut dalam dan transportasi antar pulau dengan konstruksi lambung yang diperkuat.",
+    name: "Kapal Bubu",
+    type: "Trap Setter",
+    image: "https://images.unsplash.com/photo-1769253916683-04f6d391d77e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Kapal pembawa perangkap (bambu/kawat) yang ramah lingkungan. Spesialis menangkap kepiting, rajungan, dan lobster.",
     specs: {
-      length: "12-15 meter",
-      capacity: "3 ton",
+      length: "7.5-10m x 3-5m",
+      capacity: "2 - 3 Ton",
       wood: "Ulin & Jati",
-      crew: "4-6 orang"
-    }
-  },
-  {
-    name: "Perahu Layar",
-    type: "Perahu Layar Tradisional",
-    image: "https://images.unsplash.com/photo-1586064957227-11d763b135a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib2F0JTIwYnVpbGRpbmclMjB3b3Jrc2hvcHxlbnwxfHx8fDE3NjgyMDg3MjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    description: "Kapal layar klasik yang menggabungkan desain warisan budaya dengan kemampuan navigasi modern.",
-    specs: {
-      length: "10-12 meter",
-      capacity: "1.5 ton",
-      wood: "Jati",
-      crew: "3-4 orang"
-    }
-  },
-  {
-    name: "Kapal Kargo",
-    type: "Kapal Angkut Barang",
-    image: "https://images.unsplash.com/photo-1762139304314-07405b934bff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBib2F0JTIwc3Vuc2V0JTIwb2NlYW58ZW58MXx8fHwxNzY4MjA5NDU2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    description: "Kapal kargo tugas berat untuk transportasi komersial dengan ruang muat (palka) yang luas.",
-    specs: {
-      length: "18-22 meter",
-      capacity: "8 ton",
-      wood: "Ulin & Meranti",
-      crew: "6-8 orang"
+      crew: "2-3 orang"
     }
   }
 ];
 
-// 3. Terima props 'onSelectBoat' di parameter fungsi
 export function ProductCatalog({ onSelectBoat }: CatalogProps) {
   return (
     <section id="fleet" className="py-24 md:py-32 px-6 md:px-12 bg-[var(--seafoam-white)]">
@@ -85,13 +86,14 @@ export function ProductCatalog({ onSelectBoat }: CatalogProps) {
             Spesifikasi Kapal
           </h2>
           <p className="text-lg text-[var(--ocean-indigo)]/70 max-w-2xl mx-auto">
-            Setiap kapal dibuat berdasarkan pesanan. Spesifikasi teknis dapat disesuaikan dengan kebutuhan operasional Anda.
+            Dimensi standar kapal kami adalah <strong>Panjang 7.5-10m</strong> dan <strong>Lebar 3-5m</strong>. 
+            Silakan pilih varian berdasarkan kebutuhan operasional alat tangkap Anda.
           </p>
           <div className="w-24 h-1 bg-[var(--teak-wood)] mx-auto mt-6"></div>
         </div>
 
         {/* Product Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {boats.map((boat, index) => (
             <div 
               key={index}
@@ -145,7 +147,8 @@ export function ProductCatalog({ onSelectBoat }: CatalogProps) {
                   <div className="flex items-start gap-2">
                     <Ruler className="w-5 h-5 text-[var(--teak-wood)] mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-xs text-[var(--ocean-indigo)]/60 uppercase tracking-wide mb-0.5">Panjang</div>
+                      {/* Label 'Panjang' tetap, tapi isinya mencakup Lebar */}
+                      <div className="text-xs text-[var(--ocean-indigo)]/60 uppercase tracking-wide mb-0.5">Dimensi (P x L)</div>
                       <div className="text-sm text-[var(--ocean-deep)]" style={{ fontWeight: 600 }}>{boat.specs.length}</div>
                     </div>
                   </div>
@@ -200,10 +203,12 @@ export function ProductCatalog({ onSelectBoat }: CatalogProps) {
           </h3>
           <p className="text-white/80 mb-6 max-w-2xl mx-auto">
             Kami melayani pembuatan desain khusus sesuai spesifikasi Anda. 
-            Mulai dari kapal nelayan hingga kapal pesiar, kami siap mewujudkan kebutuhan Anda.
+            Mulai dari kapal nelayan hingga berbagai macam, kami siap mewujudkan kebutuhan Anda.
           </p>
           <button 
-            onClick={() => window.open('https://wa.me/YOUR_WHATSAPP_NUMBER', '_blank')}
+            // Tetap menggunakan inline function agar tidak mengubah struktur kode (menambah function baru)
+            // Hanya mengubah URL copywriting-nya
+            onClick={() => window.open('https://wa.me/6281369013310?text=Halo%20Mustika%20Asih%2C%20saya%20tertarik%20untuk%20mendiskusikan%20pembuatan%20kapal%20dengan%20spesifikasi%20khusus%20(Custom%20Order).%20Mohon%20infonya.', '_blank')}
             className="inline-flex items-center gap-2 px-8 py-3 bg-[var(--brass-accent)] text-white rounded-lg hover:bg-[var(--brass-dark)] transition-colors duration-300 shadow-lg"
             style={{ fontWeight: 600 }}
           >

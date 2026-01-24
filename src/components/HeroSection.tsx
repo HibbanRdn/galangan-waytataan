@@ -4,10 +4,10 @@ export function HeroSection() {
   
   // Fungsi handler untuk klik tombol WhatsApp
   const handleConsultation = () => {
-    const phoneNumber = "6282175152957"; // Nomor tujuan (format 62)
+    const phoneNumber = "6281369013310"; // Nomor tujuan (format 62)
     
-    // Pesan Template Khusus Konsultasi
-    const message = "Halo Way Tataan, saya ingin berkonsultasi mengenai pembuatan kapal kayu. Mohon informasi lebih lanjut.";
+    // Pesan Template Khusus Konsultasi (Revisi Nama Brand)
+    const message = "Halo Mustika Asih, saya ingin berkonsultasi mengenai pembuatan kapal kayu. Mohon informasi lebih lanjut.";
     
     // Membuat URL WhatsApp
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -61,11 +61,11 @@ export function HeroSection() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl tracking-tight mb-6 text-white" style={{ fontWeight: 700, lineHeight: 1.1 }}>
             Galangan Kapal Kayu,
             <br />
-            <span className="text-[var(--brass-accent)]">Way Tataan</span>
+            <span className="text-[var(--brass-accent)]">Mustika Asih</span>
           </h1>
           
           <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-12 max-w-3xl mx-auto" style={{ fontWeight: 500 }}>
-            Spesialis Konstruksi Kapal & Perahu Profesional
+            Spesialis Konstruksi Kapal & Perahu Nelayan Profesional
           </p>
 
           {/* Tagline */}
