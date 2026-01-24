@@ -6,12 +6,15 @@ import {
   Wind,
   Ship,
   Hammer,
-  Download,
-  Phone
+  Phone,
+  MapPin,      // Ditambahkan untuk Footer
+  Mail,        // Ditambahkan untuk Footer
+  Facebook,    // Ditambahkan untuk Footer
+  Instagram    // Ditambahkan untuk Footer
 } from "lucide-react";
 
 // ============================================================================
-// TYPES (Tidak ada perubahan)
+// TYPES
 // ============================================================================
 
 interface BoatSpec {
@@ -33,7 +36,7 @@ interface ProductDetailProps {
 }
 
 // ============================================================================
-// HELPER COMPONENTS (Tidak ada perubahan)
+// HELPER COMPONENTS
 // ============================================================================
 
 function SpecRow({ label, value }: { label: string; value: string }) {
@@ -59,7 +62,7 @@ export function ProductDetail({ boat, onBack }: ProductDetailProps) {
     window.scrollTo(0, 0);
   }, []);
 
-  // Extended boat data (Tidak ada perubahan)
+  // Extended boat data
   const extendedData = {
     priceRange: "Rp 180 - 250jt (Estimasi)",
     images: [
@@ -105,7 +108,7 @@ export function ProductDetail({ boat, onBack }: ProductDetailProps) {
   return (
     <div className="min-h-screen bg-[var(--seafoam-white)] text-[var(--foreground)] font-sans flex flex-col">
 
-      {/* Header Navigation (Tidak ada perubahan) */}
+      {/* Header Navigation */}
       <div className="bg-white border-b border-[var(--border)] sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <button
@@ -120,7 +123,7 @@ export function ProductDetail({ boat, onBack }: ProductDetailProps) {
         </div>
       </div>
 
-      {/* Main Content (Tidak ada perubahan signifikan) */}
+      {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-grow">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
 
@@ -129,11 +132,8 @@ export function ProductDetail({ boat, onBack }: ProductDetailProps) {
 
             {/* Image Gallery */}
             <div className="flex flex-col gap-4">
-
               {/* Main Image */}
               <div className="relative aspect-video bg-[var(--ocean-deep)] rounded-lg overflow-hidden border border-[var(--border)] shadow-sm group">
-
-                {/* Grid Pattern Overlay */}
                 <div
                   className="absolute inset-0 opacity-20 pointer-events-none z-10"
                   style={{
@@ -142,15 +142,11 @@ export function ProductDetail({ boat, onBack }: ProductDetailProps) {
                     backgroundPosition: '-1px -1px'
                   }}
                 />
-
-                {/* Image */}
                 <img
                   src={extendedData.images[activeImage]}
                   alt={`${boat.name} - View ${activeImage + 1}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-
-                {/* Label */}
                 <div className="absolute top-6 left-6 z-20">
                   <span className="bg-[var(--brass-accent)] text-white text-[10px] font-bold px-3 py-1.5 rounded uppercase tracking-widest shadow-md">
                     Exterior View
@@ -192,14 +188,12 @@ export function ProductDetail({ boat, onBack }: ProductDetailProps) {
                   Ready to Build
                 </span>
               </div>
-
               <h1 className="text-4xl font-bold text-[var(--ocean-deep)] mb-1">
                 {boat.name}
               </h1>
               <p className="text-lg text-[var(--muted-foreground)] mb-6">
                 {boat.type}
               </p>
-
               <div className="text-2xl sm:text-3xl font-bold text-[var(--brass-accent)]">
                 {extendedData.priceRange}
               </div>
@@ -223,8 +217,6 @@ export function ProductDetail({ boat, onBack }: ProductDetailProps) {
 
             {/* Technical Specs Tabs */}
             <div className="bg-white rounded-lg border border-[var(--border)] shadow-sm overflow-hidden">
-
-              {/* Tab Headers */}
               <div className="flex border-b border-[var(--border)] divide-x divide-[var(--border)]">
                 {tabs.map((tab) => (
                   <button
@@ -244,18 +236,13 @@ export function ProductDetail({ boat, onBack }: ProductDetailProps) {
                     <tab.icon className={`w-5 h-5 mb-1 ${
                       activeTab === tab.id ? 'stroke-[2.5px]' : 'stroke-2'
                     }`} />
-
                     <span>{tab.label}</span>
-
-                    {/* Active Indicator */}
                     {activeTab === tab.id && (
                       <div className="absolute bottom-0 left-0 w-full h-[3px] bg-[var(--brass-accent)]" />
                     )}
                   </button>
                 ))}
               </div>
-
-              {/* Tab Content */}
               <div className="divide-y divide-[var(--border)]">
                 {activeTab === 'dims' && (
                   <>
@@ -288,7 +275,6 @@ export function ProductDetail({ boat, onBack }: ProductDetailProps) {
               <h4 className="text-xs font-bold text-[var(--brass-accent)] uppercase tracking-widest mb-6 relative z-10">
                 Standard Equipment
               </h4>
-
               <ul className="space-y-4 relative z-10">
                 {extendedData.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-white/90">
@@ -318,59 +304,114 @@ export function ProductDetail({ boat, onBack }: ProductDetailProps) {
       </main>
 
       {/* ================================================================== */}
-      {/* FOOTER - BAGIAN YANG DIUBAH */}
+      {/* FOOTER BARU (Mustika Asih Style) */}
       {/* ================================================================== */}
-      <footer className="relative bg-gradient-to-b from-[var(--ocean-deep)] to-[var(--ocean-indigo)] border-t border-white/10 py-12 mt-8 text-white/80 overflow-hidden">
-  
-  {/* === 1. LAYER PATTERN === */}
-  {/* Pattern diagonal samar seperti di ProcessGallery */}
-  <div 
-    className="absolute inset-0 opacity-5 pointer-events-none"
-    style={{
-      backgroundImage: `repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        rgba(255,255,255,0.1) 10px,
-        rgba(255,255,255,0.1) 20px
-      )`
-    }}
-  />
+      <footer className="relative bg-[var(--ocean-deep)] text-white overflow-hidden mt-12">
+        {/* Background pattern */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)
+            `
+          }}
+        />
 
-  {/* === 2. LAYER KONTEN === */}
-  {/* Note: Class 'relative z-10' penting agar teks tidak tertutup pattern */}
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
-    
-    {/* Bagian Logo */}
-    <div className="flex justify-center gap-6 mb-6 mt-4 opacity-50">
-      <img 
-        src="/favicon-16x16.png" 
-        alt="Logo Phinisi Boat Builder" 
-        className="h-12 w-auto object-contain invert brightness-0" 
-      />
-    </div>
+        <div className="relative max-w-7xl mx-auto px-6 md:px-12 py-16">
+          {/* Grid Layout 3 Kolom */}
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
+            
+            {/* KOLOM 1: Brand & Identitas */}
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                {/* Logo Image */}
+                <div>
+                  <img 
+                    src="/logo.png" 
+                    alt="Logo Mustika Asih" 
+                    className="w-10 h-10 object-contain" 
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl" style={{ fontWeight: 700 }}>Mustika Asih</h3>
+                  <p className="text-[var(--brass-accent)] text-sm">Galangan Kapal</p>
+                </div>
+              </div>
+              <p className="text-white/70 leading-relaxed mb-6">
+                Dirintis oleh Bapak Zainudin sejak 1999 dan resmi berdiri pada 2002. Galangan kapal lokal yang mengutamakan kualitas konstruksi dengan dedikasi dan keahlian tangan pertama.
+              </p>
+              {/* Social Links */}
+              <div className="flex items-center gap-3">
+                <a href="#" className="p-2 bg-white/10 hover:bg-[var(--brass-accent)] rounded-lg transition-colors duration-300" aria-label="Facebook">
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="#" className="p-2 bg-white/10 hover:bg-[var(--brass-accent)] rounded-lg transition-colors duration-300" aria-label="Instagram">
+                  <Instagram className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
 
-    <p className="text-sm text-white/70">
-      &copy; {new Date().getFullYear()} Phinisi Boat Builder Indonesia. All rights reserved.
-    </p>
+            {/* KOLOM 2: Kontak Info */}
+            <div>
+              <h4 className="text-lg mb-6" style={{ fontWeight: 700 }}>Hubungi Kami</h4>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-[var(--brass-accent)] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-white/90">Jl. Pantai Timur No. 45</p>
+                    <p className="text-white/70">Way Tataan, Pesawaran</p>
+                    <p className="text-white/70">Lampung 35452, Indonesia</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-[var(--brass-accent)] flex-shrink-0" />
+                  <p className="text-white/90">+62 813-6901-3310</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-[var(--brass-accent)] flex-shrink-0" />
+                  <p className="text-white/90">info@mustikaasih.id</p>
+                </div>
+              </div>
+            </div>
 
-    <div className="flex justify-center gap-6 mt-4 text-xs font-bold text-white tracking-wider uppercase">
-      <a href="#" className="hover:text-[var(--brass-accent)] transition-colors">Privacy Policy</a>
-      <a href="#" className="hover:text-[var(--brass-accent)] transition-colors">Terms of Service</a>
-      <a href="#" className="hover:text-[var(--brass-accent)] transition-colors">Contact</a>
-    </div>
-  </div>
-</footer>
-      {/* ================================================================== */}
+            {/* KOLOM 3: Peta Lokasi */}
+            <div className="flex flex-col h-full">
+              <h4 className="text-lg mb-6" style={{ fontWeight: 700 }}>Lokasi Workshop</h4>
+              <div className="flex-grow w-full h-full min-h-[200px] rounded-lg overflow-hidden border-2 border-white/10 shadow-lg">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.570238382038!2d105.24909297593175!3d-5.4819534944978185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40d969b38a5891%3A0xa36a9e31cd5d8cdb!2sGalangan%20Mustika%20Asih!5e0!3m2!1sid!2sid!4v1769257718567!5m2!1sid!2sid" 
+                  className="w-full h-full"
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Peta Lokasi Mustika Asih"
+                ></iframe>
+              </div>
+            </div>
 
+          </div>
+
+          {/* Divider & Bottom Bar */}
+          <div className="w-full h-px bg-white/10 mb-8"></div>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/60">
+            <p>© {new Date().getFullYear()} Mustika Asih Shipbuilders. Hak cipta dilindungi.</p>
+            <div className="flex items-center gap-6">
+              <a href="#privacy" className="hover:text-[var(--brass-accent)] transition-colors duration-300">Kebijakan Privasi</a>
+              <a href="#terms" className="hover:text-[var(--brass-accent)] transition-colors duration-300">Syarat & Ketentuan</a>
+            </div>
+          </div>
+        </div>
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[var(--brass-accent)] to-transparent"></div>
+      </footer>
     </div>
   );
 }
 
 // ============================================================================
-// DEMO WRAPPER (Tidak ada perubahan)
+// DEMO WRAPPER
 // ============================================================================
-// ... (kode demo wrapper sama seperti sebelumnya)
 export default function App() {
   const [showDetail, setShowDetail] = useState(true);
 

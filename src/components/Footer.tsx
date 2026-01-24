@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Facebook, Instagram, Ship } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram } from "lucide-react";
 
 export function Footer() {
 
@@ -22,8 +22,13 @@ export function Footer() {
           {/* KOLOM 1: Brand & Identitas */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 bg-[var(--brass-accent)] rounded-lg">
-                <Ship className="w-8 h-8 text-white" />
+              {/* Container Icon/Logo - Padding dihapus, ukuran diperbesar */}
+              <div>
+                <img 
+                  src="/logo.png" 
+                  alt="Logo Mustika Asih" 
+                  className="w-10 h-10 object-contain" 
+                />
               </div>
               <div>
                 <h3 className="text-xl" style={{ fontWeight: 700 }}>Mustika Asih</h3>
